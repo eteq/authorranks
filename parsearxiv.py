@@ -1,3 +1,8 @@
-import arxivoai2
+import pyoai2
 
-s = arxivoai2.run_session(**dict(baseurl='http://export.arxiv.org/oai2', recordset='physics:astro-ph'))
+
+kw = dict(incremental=False, basewritename='arXiv_oai/reclist',
+          startdate=None, format='arXivRaw', recordset='physics:astro-ph',
+          baseurl='http://export.arxiv.org/oai2', recnumpadding=4)
+
+s = pyoai2.run_session(**kw)
